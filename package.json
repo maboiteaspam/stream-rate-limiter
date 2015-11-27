@@ -13,10 +13,10 @@
     "debug": "^2.2.0",
     "through2": "^2.0.0"
   },
-  "dev-dependencies": {
+  "devDependencies": {
     "minimist": "^1.2.0",
     "multimeter": "^0.1.1",
     "node-string-pad": "0.0.4",
-    "stream-visualizer": "maboiteaspam/stream-visualizer",
+    "stream-visualizer": "maboiteaspam/stream-visualizer"
   }
 }
