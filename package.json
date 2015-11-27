@@ -14,6 +14,7 @@
     "minimist": "^1.2.0",
     "multimeter": "^0.1.1",
     "node-string-pad": "0.0.4",
+    "stream-visualizer": "maboiteaspam/stream-visualizer",
     "through2": "^2.0.0"
   }
 }

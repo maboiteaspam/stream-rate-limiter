@@ -9,7 +9,7 @@ process.env['DEBUG'] = 'stream-visualizer';
 var debug = require('debug')('stream-rate-limiter')
 var through2 = require('through2')
 var rateLimiter = require('./index')
-var sVisualizer = require('./stream-visualizer')
+var sVisualizer = require('stream-visualizer')
 
 var concurrency=1000;
 var streamSize=5000;
