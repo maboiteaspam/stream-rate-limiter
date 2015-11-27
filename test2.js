@@ -30,8 +30,8 @@ stream.resume();
 
 streamC
   .pipe(visualizer.jobSent('stream'))
-  .pipe(stream)
   .pipe(visualizer.jobProcessing('stream'))
+  .pipe(stream)
   .pipe(visualizer.jobRemains('stream', true))
 
 
