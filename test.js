@@ -29,7 +29,7 @@ var stream = rateLimiter(concurrency, function damnSlowProcess (chunk, done) {
   setTimeout(function(){
     //console.log(chunk.some+'');
     done();
-  }, 250)
+  }, getRandomInt(500,3000))
 });
 
 var streamB = through2.obj(function(chunk, enc, cb) {
@@ -45,9 +45,10 @@ streamB.resume()  /// WHY DOES IT NEED FLOWING MODE !!!?
 
 streamC
   .pipe(visualizer.jobSent('stream'))
-  .pipe(stream)
   .pipe(visualizer.jobProcessing('stream'))
+  .pipe(stream)
   .pipe(visualizer.jobSent('streamB'))
+  .pipe(visualizer.jobProcessing('streamB'))
   .pipe(streamB)
   .pipe(visualizer.jobPushed('streamB', true))
   .pipe(visualizer.jobRemains('stream', true))
@@ -61,3 +62,7 @@ stream.resume();
 
 streamC.end()
 
+
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
