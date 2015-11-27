@@ -4,8 +4,6 @@ var minimist = require('minimist')(process.argv.slice(2));
 if (minimist.verbose || minimist.v)
   process.env['DEBUG'] = 'stream-rate-limiter';
 
-process.env['DEBUG'] = 'stream-visualizer';
-
 var debug = require('debug')('stream-rate-limiter')
 var through2 = require('through2')
 var rateLimiter = require('./index')
