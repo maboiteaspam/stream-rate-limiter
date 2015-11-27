@@ -36,7 +36,7 @@ var streamB = through2.obj(function(chunk, enc, cb) {
   setTimeout(function (){
     debug('streamB=%s', chunk.some)
     cb(null, chunk);
-  }, 2)
+  }, 3)
 }, function (cb){
   debug('streamB flushing')
   cb()
@@ -47,11 +47,12 @@ streamC
   .pipe(visualizer.jobSent('stream'))
   .pipe(visualizer.jobProcessing('stream'))
   .pipe(stream)
+  .pipe(visualizer.jobRemains('stream', true))
+
   .pipe(visualizer.jobSent('streamB'))
   .pipe(visualizer.jobProcessing('streamB'))
   .pipe(streamB)
   .pipe(visualizer.jobPushed('streamB', true))
-  .pipe(visualizer.jobRemains('stream', true))
 ;
 
 for (var e=0; e<streamSize;e++) {
