@@ -8,7 +8,7 @@ A transform to limit the rate of a stream.
 
 ## API
 
-It return a stream, and take a callback(chunk, done) as parameter.
+It return a `through2.obj` stream, and take a callback(chunk, done) as parameter.
 
 ```js
 var rateLimiter = require('stream-rate-limiter')
@@ -28,3 +28,9 @@ Take a look to the example, it s using `multimeter` module to visualize the stre
     git clone git@github.com:maboiteaspam/stream-rate-limiter.git
     cd stream-rate-limiter
     npm i && node test.js
+
+## Read more
+
+ - https://github.com/rvagg/through2
+ - https://github.com/nodejs/readable-stream/blob/master/doc/stream.markdown#stream_event_data
+ - https://github.com/substack/stream-handbook
