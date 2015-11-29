@@ -6,7 +6,7 @@ if (minimist.verbose || minimist.v)
 
 var debug = require('debug')('stream-rate-limiter')
 var through2 = require('through2')
-var rateLimiter = require('./index')
+var rateLimiter = require('../index')
 var sVisualizer = require('stream-visualizer')
 
 var concurrency=1000;
