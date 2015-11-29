@@ -28,7 +28,9 @@ Take a look to the example, it s using `multimeter` module to visualize the stre
     git clone git@github.com:maboiteaspam/stream-rate-limiter.git
     cd stream-rate-limiter
     npm i
-    node test.js && node test2.js && node test3.js
+    node examples/test.js
+    node exapmples/test2.js
+    node examples/test3.js
 
 ## Read more
 
